@@ -21,7 +21,8 @@ form {
 
 textarea {
   flex: 0 0 100%;
-  /*resize: none;*/
+  resize: none;
+  padding: 4px;
 }
 
 input, span.counter {
