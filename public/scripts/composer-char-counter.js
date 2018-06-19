@@ -10,6 +10,11 @@ $(function() {
       $counter.text(` ${-(currentLength - maxLength)}`).css('color', 'red');
     }
   });
+  //Keeps the browser from leaving the page
+  $('#btn').click(function( event ) {
+  event.preventDefault();
+
+  });
 });
 
 
