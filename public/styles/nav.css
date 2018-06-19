@@ -6,6 +6,7 @@ nav#nav-bar {
   color: #e8fdff;
   padding: 0px 2em;
   display: flex;
+  z-index: 1;
 }
 
 #nav-bar .logo {

@@ -12,14 +12,20 @@ article.tweet header {
   box-sizing: border-box;
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
   margin: 0;
 }
 
+article.tweet .left-elm {
+  display: flex;
+}
 article.tweet img {
   margin: 1em;
   border-radius: 10px;
 }
 article.tweet h2 {
+  font-size: 1em;
   color: #323638;
   padding-left: 3px;
 }
@@ -29,9 +35,8 @@ article.tweet:hover h2 {
 }
 
 article.tweet span.handle{
-  position: relative;
-  top: 30px;
-  left: 120px;
+  margin: 1em;
+
 }
 
 article.tweet p, article.tweet footer {
