@@ -23,8 +23,8 @@ body {
 
 main.container {
   width: 450px;
+  height: 600px;
   margin: 0 auto;
-  height: 400px;
   padding-top: 140px;
   text-align: center;
   background-color: white;

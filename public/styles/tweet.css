@@ -1,0 +1,20 @@
+article.tweet  {
+  background-color: white;
+  margin: 2em;
+  border-radius: 10px ;
+  border: 1px solid #ccc1c1;
+
+}
+
+article.tweet header {
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  background-color: #eee;
+}
+
+article.tweet .username {
+  padding-left: 3px;
+}
