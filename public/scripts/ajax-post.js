@@ -11,7 +11,7 @@ $(function() {
             type: request_method,
             data : form_data
         }).done(function(response){ //
-            $("tweets.container").html(response);
+            $("tweets-container").html(response);
         });
     });
 });
