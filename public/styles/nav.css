@@ -35,6 +35,7 @@ nav#nav-bar {
   padding: 1em;
   border-radius: 10px;
   margin-top: 10px;
+  border: 1px solid black;
 }
 
 
