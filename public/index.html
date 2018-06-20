@@ -34,6 +34,9 @@
 
      <!-- Char Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+     <!-- Ajax Post JS -->
+    <script type="text/javascript" src="/scripts/ajax-post.js"></script>
   </head>
 
   <body>
@@ -49,7 +52,7 @@
 
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
+        <form method="POST" action="/tweets" id="newTweet-form">
           <textarea name="text" placeholder="What are you humming about?" ></textarea>
           <input id="btn" type="submit" value="Tweet">
           <span class="counter">140</span>
@@ -58,16 +61,6 @@
 
       <section id="tweets-container">
         <article class="tweet">
-        <!--   <header>
-            <img src="http://via.placeholder.com/50X50" alt="User Avatar">
-            <h2>Bill Fields</h2>
-            <span class="handle">@MrFields</span>
-          </header>
-
-          <p>Little tweet here</p>
-
-          <footer class="date">10 days ago<span id="icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
-          </footer> -->
 
         </article>
 
