@@ -11,9 +11,16 @@ $(function() {
   $('#tweets-container').html($div);
   } // end of renderTweets function
 
+  function escape(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  } //end of escape function to check XSS
+
   function createTweetElement(tweet) {
+    let text = tweet.content.text;
     let $tweet = $("<article>").addClass("tweet");
-    let newHTML = `<header>
+    let $newHTML = `<header>
                    <div class="left-elm">
                    <img src=${tweet.user.avatars.small} alt="User Avatar"/>
                    <h2>${tweet.user.name}</h2>
@@ -23,12 +30,13 @@ $(function() {
                    </div>
                    </header>
 
-                   <p>${tweet.content.text}</p>
+                   <p>${escape(text)}</p>
 
                    <footer class="date">${tweet.created_at}<span id="icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
                    </footer>`;
 
-    $tweet = $tweet.append(newHTML);
+
+    $tweet = $tweet.append($newHTML);
     return $tweet;
   } //end of createTweetElement function
 
@@ -51,6 +59,7 @@ $(function() {
       let form_data = $(this).serialize(); //Encode form elements for submission
 
       event.preventDefault();
+      // $("#newTweet-form textarea").text(form_data);
 
       $.ajax({
         url : post_url,
@@ -66,11 +75,13 @@ $(function() {
 
   function validateForm(){
     let validation = false;
-    let message = $('textarea').val();
+    let $message = $('textarea').val();
 
-    if(message.length < 1){
+
+
+    if($message.length < 1){
       $('textarea').after('<span class="error"> You message is empty!</span>');
-      } else if(message.length > 140){
+      } else if($message.length > 140){
       $('textarea').after('<span class="error"> You message is too long!</span>');
       } else {
         validation = true;

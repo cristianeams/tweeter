@@ -32,7 +32,7 @@ nav#nav-bar {
 #nav-bar #compose {
   font-size: 1.4em;
   height: 80%;
-  width: 10%;
+  padding: 1em;
   border-radius: 10px;
   margin-top: 10px;
 }
