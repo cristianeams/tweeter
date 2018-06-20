@@ -1,4 +1,5 @@
 .new-tweet {
+  display: none;
   background-color: #eee;
   margin: 2em;
   border-radius: 10px ;
@@ -28,3 +29,4 @@ textarea {
 input, span.counter {
   margin-top: 10px;
 }
+

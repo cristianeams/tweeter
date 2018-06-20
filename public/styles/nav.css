@@ -6,7 +6,13 @@ nav#nav-bar {
   color: #e8fdff;
   padding: 0px 2em;
   display: flex;
+  justify-content: space-between;
   z-index: 1;
+}
+
+#nav-bar #main-header {
+  display: flex;
+  align-items: center;
 }
 
 #nav-bar .logo {
@@ -21,4 +27,18 @@ nav#nav-bar {
   text-align: center;
   font-size: 2em;
   line-height: 2.5em;
+}
+
+#nav-bar #compose {
+  font-size: 1.4em;
+  height: 80%;
+  width: 10%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+
+#nav-bar #compose:hover {
+  background-color: #eee ;
+  color: #00a087;
 }
