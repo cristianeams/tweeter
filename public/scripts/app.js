@@ -59,7 +59,7 @@ $(function() {
         })
         .done (function(result){
             $("#tweets-container").load(loadTweets());
-            $('#newTweet-form').val('');
+            $('#newTweet-form textarea').val('');
         });
     }
   });// end of onFormSubmit function
