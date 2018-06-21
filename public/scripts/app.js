@@ -1,12 +1,9 @@
 $(function() {
 
   function renderTweets(tweets) {
-
     let $div = $("<div></div>");
     tweets.forEach(tweet => {
-      let $single = createTweetElement(tweet);
-      $div = $div.prepend($single);
-      return $div;
+      $div = $div.prepend(createTweetElement(tweet));
     });
   $('#tweets-container').html($div);
   } // end of renderTweets function
@@ -20,7 +17,7 @@ $(function() {
   function createTweetElement(tweet) {
     let text = tweet.content.text;
     let $tweet = $("<article>").addClass("tweet");
-    let $newHTML = `<header>
+    let newHTML = `<header>
                    <div class="left-elm">
                    <img src=${tweet.user.avatars.small} alt="User Avatar"/>
                    <h2>${tweet.user.name}</h2>
@@ -36,7 +33,7 @@ $(function() {
                    </footer>`;
 
 
-    $tweet = $tweet.append($newHTML);
+    $tweet = $tweet.append(newHTML);
     return $tweet;
   } //end of createTweetElement function
 

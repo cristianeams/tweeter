@@ -4,6 +4,7 @@ article.tweet  {
   border-radius: 10px;
   border: 1px solid #ccc1c1;
   text-align: left;
+  overflow: hidden;
 }
 
 article.tweet header {
