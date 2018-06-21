@@ -1,22 +1,22 @@
 $(function() {
 
   function renderTweets(tweets) {
-    let $div = $("<div></div>");
+    let $div = $( "<div>" );
     tweets.forEach(tweet => {
       $div = $div.prepend(createTweetElement(tweet));
     });
-  $('#tweets-container').html($div);
+  $( "#tweets-container" ).html( $div) ;
   } // end of renderTweets function
 
-  function escape(str) {
-    let div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
+  function escape(string) {
+    let $div = $( "<div>" );
+    $div.append(document.createTextNode(string));
+    return $div.html();
   } //end of escape function to check XSS
 
   function createTweetElement(tweet) {
     let text = tweet.content.text;
-    let $tweet = $("<article>").addClass("tweet");
+    let $tweet = $( "<article>" ).addClass( "tweet" );
     let newHTML = `<header>
                    <div class="left-elm">
                    <img src=${tweet.user.avatars.small} alt="User Avatar"/>
@@ -33,7 +33,7 @@ $(function() {
                    </footer>`;
 
 
-    $tweet = $tweet.append(newHTML);
+    $tweet = $tweet.append( newHTML );
     return $tweet;
   } //end of createTweetElement function
 
@@ -46,13 +46,13 @@ $(function() {
   } // end of loadTweets function
   loadTweets();
 
-  $("#newTweet-form").submit(function(event){
+  $( "#newTweet-form" ).on( "submit", function(event) {
     event.preventDefault();
     let result = validateForm();
 
     if(result){
-      let post_url = $(this).attr("action"); //get form action
-      let request_method = $(this).attr("method"); //get form method
+      let post_url = $(this).attr( "action" ); //get form action
+      let request_method = $(this).attr( "method" ); //get form method
       let form_data = $(this).serialize(); //Encode form elements for submission
 
       event.preventDefault();
@@ -64,22 +64,20 @@ $(function() {
         data : form_data
         })
         .done (function(result){
-            $("#tweets-container").load(loadTweets());
-            $('#newTweet-form textarea').val('');
+            $( "#tweets-container" ).load( loadTweets() );
+            $( "#newTweet-form textarea" ).val('');
         });
     }
   });// end of onFormSubmit function
 
   function validateForm(){
     let validation = false;
-    let $message = $('textarea').val();
+    let $message = $( "textarea" ).val();
 
-
-
-    if($message.length < 1){
-      $('textarea').after('<span class="error"> You message is empty!</span>');
-      } else if($message.length > 140){
-      $('textarea').after('<span class="error"> You message is too long!</span>');
+    if( $message.length < 1 ){
+      $( "textarea" ).after( '<span class="error"> You message is empty!</span>' );
+      } else if( $message.length > 140 ){
+      $( "textarea" ).after( '<span class="error"> You message is too long!</span>' );
       } else {
         validation = true;
         return validation;
@@ -87,9 +85,9 @@ $(function() {
     }
    ///end of validateForm function
 
-  $( "button#compose" ).click(function() {
+  $( "button#compose" ).on( "click", function() {
     $( "section.new-tweet" ).slideToggle();
-    $('textarea').focus();
+    $( "textarea" ).focus();
   });
 
 });
