@@ -29,7 +29,7 @@ $(function() {
 
                    <p>${escape(text)}</p>
 
-                   <footer class="date">${tweet.created_at}<span id="icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
+                   <footer class="date">${moment(tweet.created_at).fromNow()}<span id="icons"><i class="fas fa-flag"></i><i class="fas fa-retweet"></i><i class="fas fa-heart"></i></span>
                    </footer>`;
 
 
