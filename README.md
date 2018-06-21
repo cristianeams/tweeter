@@ -15,3 +15,16 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Body Parser
+- Chance
+- Md5
+- Moment
+- MongoDB
+
+## Final Product
+
+!["Screenshot of Tweets feed"](https://github.com/cristianeams/tweeter/blob/master/docs/Screen%20Shot%202018-06-21%20at%204.06.06%20PM.png?raw=true)
+!["Adding a new Tweet](https://github.com/cristianeams/tweeter/blob/master/docs/Screen%20Shot%202018-06-21%20at%204.06.19%20PM.png?raw=true)
+
+
+
