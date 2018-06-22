@@ -6,8 +6,6 @@ const PORT          = 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
 const app           = express();
-const moment        = require('moment');
-moment().format();
 
 //Switch to MongoDB
 const {MongoClient} = require("mongodb");
