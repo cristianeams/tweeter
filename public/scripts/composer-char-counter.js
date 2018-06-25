@@ -5,7 +5,7 @@ $(function() {
   $newTweet.find("textarea").on("keyup", function() {
     const currentLength = $(this).val().length;
     if( currentLength <= maxLength ){
-      $counter.text(`${maxLength - currentLength}`);
+      $counter.text(`${maxLength - currentLength}`).css('color', 'black');
     }else if (currentLength > maxLength) {
       $counter.text(` ${-(currentLength - maxLength)}`).css('color', 'red');
     }
